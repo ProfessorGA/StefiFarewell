@@ -2,10 +2,10 @@
   "name": "stefi-farewell-countdown",
   "version": "1.0.0",
   "scripts": {
-    "ng": ".\\node20.exe node_modules/@angular/cli/bin/ng.js",
-    "start": ".\\node20.exe node_modules/@angular/cli/bin/ng.js serve",
-    "build": ".\\node20.exe node_modules/@angular/cli/bin/ng.js build",
-    "watch": ".\\node20.exe node_modules/@angular/cli/bin/ng.js build --watch --configuration development"
+    "ng": "node run-cli.js",
+    "start": "node run-cli.js serve",
+    "build": "node run-cli.js build",
+    "watch": "node run-cli.js build --watch --configuration development"
   },
   "private": true,
   "dependencies": {
