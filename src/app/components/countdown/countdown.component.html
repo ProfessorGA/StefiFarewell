@@ -1,0 +1,82 @@
+<div class="countdown-container" [class.completed]="countdownState().completed">
+  <!-- Subtle Background Grid/Particles -->
+  <div class="bg-effects">
+    <div class="bg-grid"></div>
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+    <div class="glow-orb glow-orb-3"></div>
+    <div class="particles">
+      @for (p of particlesArray; track p) {
+        <div class="particle" [style.--index]="p"></div>
+      }
+    </div>
+  </div>
+
+  @if (!countdownState().completed) {
+    <!-- Countdown Active State -->
+    <div class="content-wrapper active-state">
+      <header class="header">
+        <h1 class="main-heading">Stefi's Farewell Countdown</h1>
+        <p class="subtitle">Something special is waiting...</p>
+        <div class="glow-divider"></div>
+      </header>
+
+      <div class="cards-container" role="timer" aria-live="polite">
+        <!-- Days Card -->
+        <div class="card" aria-label="Days remaining">
+          <div class="card-number-wrapper">
+            <span class="card-number">{{ formatNumber(countdownState().days) }}</span>
+          </div>
+          <span class="card-label">Days</span>
+          <div class="card-glow"></div>
+        </div>
+
+        <!-- Hours Card -->
+        <div class="card" aria-label="Hours remaining">
+          <div class="card-number-wrapper">
+            <span class="card-number">{{ formatTwoDigits(countdownState().hours) }}</span>
+          </div>
+          <span class="card-label">Hours</span>
+          <div class="card-glow"></div>
+        </div>
+
+        <!-- Minutes Card -->
+        <div class="card" aria-label="Minutes remaining">
+          <div class="card-number-wrapper">
+            <span class="card-number">{{ formatTwoDigits(countdownState().minutes) }}</span>
+          </div>
+          <span class="card-label">Minutes</span>
+          <div class="card-glow"></div>
+        </div>
+
+        <!-- Seconds Card -->
+        <div class="card" aria-label="Seconds remaining">
+          <div class="card-number-wrapper">
+            <span class="card-number">{{ formatTwoDigits(countdownState().seconds) }}</span>
+          </div>
+          <span class="card-label">Seconds</span>
+          <div class="card-glow"></div>
+        </div>
+
+        <!-- Milliseconds Card -->
+        <div class="card milliseconds-card" aria-label="Milliseconds remaining">
+          <div class="card-number-wrapper">
+            <span class="card-number ms-digits">{{ formatMilliseconds(countdownState().milliseconds) }}</span>
+          </div>
+          <span class="card-label">Milliseconds</span>
+          <div class="card-glow"></div>
+        </div>
+      </div>
+    </div>
+  } @else {
+    <!-- Completed State Placeholder -->
+    <div class="content-wrapper completed-state">
+      <div class="celebration-box" role="dialog" aria-modal="true" aria-labelledby="time-ready">
+        <div class="emoji-container" aria-hidden="true">🎉</div>
+        <h1 id="time-ready" class="celebration-heading">It's Time!</h1>
+        <h2 class="celebration-subheading">The Surprise is Ready.</h2>
+        <p class="celebration-phase">(Phase 2 Coming Soon)</p>
+      </div>
+    </div>
+  }
+</div>

@@ -1,0 +1,22 @@
+# Node dependencies
+node_modules/
+
+# Local binaries
+node20.exe
+node.exe
+
+# Angular build outputs & cache
+dist/
+tmp/
+out-tsc/
+.angular/
+
+# Diagnostics & Logs
+*.log
+build-debug.txt
+build-debug-utf8.txt
+
+# Editor configurations
+.vscode/
+.idea/
+.DS_Store

@@ -1,0 +1,8 @@
+export interface CountdownModel {
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+  milliseconds: number;
+  completed: boolean;
+}
